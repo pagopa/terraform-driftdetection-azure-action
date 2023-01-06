@@ -1,1 +1,1 @@
-# terraform-plan-azure-action
+# terraform-driftdetection-azure-action
