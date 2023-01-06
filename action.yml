@@ -30,7 +30,7 @@ runs:
           tenant-id: ${{ inputs.tenant_id }}
           subscription-id: ${{ inputs.subscription_id }}
 
-      - name: Terraform plan
+      - name: Terraform drift detection
         shell: bash
         run: |
           export PATH="${HOME}/bin:$PATH"
@@ -43,4 +43,4 @@ runs:
 
           cd ${{ inputs.dir }}
 
-          bash terraform.sh plan ${{ inputs.azure_environment }} -lock-timeout=300s -lock=false
+          bash terraform.sh plan ${{ inputs.azure_environment }} -lock-timeout=3000s -detailed-exitcode
